@@ -5,6 +5,8 @@ function Details(props) {
   const [info, setInfo] = useState();
 
   useEffect(() => {
+    setInfo(undefined);
+
     if (props.info) {
       fetch(import.meta.env.VITE_BACKEND_URL + `/${props.info.id}.json`)
         .then((response) => {
@@ -18,7 +20,6 @@ function Details(props) {
           setInfo(data);
         })
         .catch((error) => {
-          setInfo(undefined);
           console.error(error);
         });
     }
