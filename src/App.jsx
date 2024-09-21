@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <List items={users} onItemClick={handleItemClick} />
-      <Details item={activeUser} />
+      <Details info={activeUser} />
     </>
   );
 }
